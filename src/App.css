@@ -126,16 +126,18 @@ main {
   margin-left: 250px; /* Quando o menu está expandido, o conteúdo se ajusta */
 }
 header{
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade */
+  border-radius: 5px;
   font-style: inherit;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 8vh;
-  background-color: rgb(44 62 80);
+  background-color:aliceblue;
   font-size: 10px;
   font-family: sans-serif;
-  color: #ffffff;
+  color: #0b005b;
 
   display: flex;
   justify-content: center;
@@ -151,16 +153,18 @@ footer {
   left: 0;
   width: 100%;
   height: 8vh;
-  background-color: rgb(44 62 80);
+  background-color:aliceblue;
   font-size: 15px;
   font-family: sans-serif;
-  color: #ffffff;
+  color: #070707;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   z-index: 1; /* Fica atrás do conteúdo */
+
+  box-shadow: 0 4px 8px rgba(11, 0, 59, 0.952); /* Sombra leve para dar profundidade */
 
 }
 
@@ -327,4 +331,68 @@ footer {
   color: white;
   padding: 20px;
   text-align: center;
+}
+/*----------------------------------------------*/
+/* ******************** Bloco de Formulas *************************/
+.FormulasConteudo{
+width: 92vw;
+justify-items: center;
+}
+
+.searchBar {
+  min-width: 90%;
+  margin-left: 5%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  border: rgba(128, 128, 128, 0.806) solid 1.5px;
+  box-shadow: 0 2px 2px rgba(18, 0, 105, 0.363);
+}
+
+.Tabela{
+  border-collapse: collapse;
+  margin: 10px; 
+  width: 90vw; 
+  display: block; 
+  height: 65vh; 
+  overflow-y: auto;
+}
+
+.Tabela thead {
+	position: sticky; /* Faz o cabeçalho fixo */
+	top: 0;
+	background-color: #b9cae2; /* Fundo para diferenciar */
+	z-index: 1; /* Garante que o cabeçalho fique acima */
+}
+
+.Tabela th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.Tabela th{
+  padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	width: 20vw;
+
+}
+
+.Tabela td{
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	width: 27.5vw;
+
+}
+
+
+tr:hover {
+	
+	background-color: #cbcbcba5;
+	cursor: pointer;
+	transition: 0.5s;
 }
