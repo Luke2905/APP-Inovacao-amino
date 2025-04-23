@@ -36,6 +36,12 @@ const MenuLateral = () => {
                 {expandido && <span>Formulas</span>}
             </Link>
          </li>
+         <li>
+             <Link to="/busca">
+                <i className={`fa ${expandido ? 'fa-magnifying-glass' : 'fa-magnifying-glass'}`}></i>
+                {expandido && <span>Busca Avançada</span>}
+            </Link>
+         </li>
 
         </ul>
       </div>
