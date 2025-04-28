@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './views/home.tsx'
 import Formulas from './views/formulas.tsx';
+import BuscaPropriedades from './views/buscaAvancada.tsx';
 //import MenuNav from './components/navBar.tsx';
 import ReactDOM from "react-dom/client";
 import MenuLateral from './components/sideMenu.tsx';
@@ -22,6 +23,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path='home' element={<Home />} />
             <Route path='formulas' element={<Formulas />} />
+            <Route path='busca' element={<BuscaPropriedades />} />
           </Routes>
         </main>
       </Router>
