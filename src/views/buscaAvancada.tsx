@@ -19,15 +19,27 @@ export default BuscaPropriedades;
 function List() {
     const [formulas, setFormulas] = useState([]);
     const [aplicacao, setApicacao] = useState([]);
+    const [familia, setFamilia] = useState([]);
     const [pesquisa, setPesquisa] = useState('');
-    const [filtrosSelecionados, setFiltrosSelecionados] = useState([]);
+    const [filtrosAplicacaoSelecionados, setFiltrosAplicacaoSelecionados] = useState([]);
+    const [filtrosFamiliaSelecionados, setFiltrosFamiliaSelecionados] = useState([]);
+    
 
-    function handleFiltroChange(event) {  //-> chamada com o click do usuario
+    function handleFiltroAplicacaoChange(event) { //handle para filtro de aplicações
         const { value, checked } = event.target;
         if (checked) {
-          setFiltrosSelecionados(prev => [...prev, value]);
+          setFiltrosAplicacaoSelecionados(prev => [...prev, value]);
         } else {
-          setFiltrosSelecionados(prev => prev.filter(filtro => filtro !== value));
+          setFiltrosAplicacaoSelecionados(prev => prev.filter(filtro => filtro !== value));
+        }
+      }
+
+    function handleFiltroFamiliaChange(event) { //handle para fitro de familias
+        const { value, checked } = event.target;
+        if (checked) {
+          setFiltrosFamiliaSelecionados(prev => [...prev, value]);
+        } else {
+          setFiltrosFamiliaSelecionados(prev => prev.filter(filtro => filtro !== value));
         }
       }
 
@@ -55,10 +67,22 @@ const Formulas = []
             }
      }
 
+
+     async function getFamilia() {
+        try {
+            const familiaApi = await api.get('/familias')
+            setFamilia(familiaApi.data)   //-> seleciona apenas o campo data da requisiçao do backend
+            console.log("Sucesso na busca")
+            }catch(error){
+                console.error("Erro ao buscar aplicações:", error);
+            }
+     }
+
   
     useEffect(() => {
       getFormulas();
       getAplicacao();
+      getFamilia();
     }, []);
 
     
@@ -68,11 +92,15 @@ const Formulas = []
           item.sistema_titulo?.toLowerCase().includes(pesquisa.toLowerCase()) ||
           item.familia_titulo?.toLowerCase().includes(pesquisa.toLowerCase());
       
-        const filtroAplicacaoOk = filtrosSelecionados.length === 0 || (
-          item.aplicacao_titulo && filtrosSelecionados.includes(item.aplicacao_titulo)
+        const filtroAplicacaoOk = filtrosAplicacaoSelecionados.length === 0 || (
+          item.aplicacao_titulo && filtrosAplicacaoSelecionados.includes(item.aplicacao_titulo)
         );
       
-        return pesquisaOk && filtroAplicacaoOk;
+        const filtroFamiliaOk = filtrosFamiliaSelecionados.length === 0 || (
+          item.familia_titulo && filtrosFamiliaSelecionados.includes(item.familia_titulo)
+        );
+      
+        return pesquisaOk && filtroAplicacaoOk && filtroFamiliaOk;
       });
       
   
@@ -86,24 +114,44 @@ const Formulas = []
                 onChange={(e) => setPesquisa(e.target.value)}
             />
         <div className="buscaContainer">
-                <div className="select-propriedades">
+            <div className="select-propriedades">
+            <div className="select-familias">
+                    <strong style={{textAlign: 'center'}}>Filtrar por Familia:</strong>
+                    {Array.from(new Set(familia.map((p) => p.titulo))).map((descricao) => (
+                        <label key={descricao} style={{ display: "block" }}>
+                            <input
+                            type="checkbox"
+                            value={descricao}
+                            checked={filtrosFamiliaSelecionados.includes(descricao)}
+                            onChange={handleFiltroFamiliaChange}
+                            />
+                            {descricao}
+                        </label>
+                        ))}
+                    </div>
+                    <hr />
+            <div className="select-aplicacao">
                     <strong>Filtrar por Aplicação:</strong>
                     {Array.from(new Set(aplicacao.map((p) => p.titulo))).map((descricao) => (
                         <label key={descricao} style={{ display: "block" }}>
                             <input
                             type="checkbox"
                             value={descricao}
-                            checked={filtrosSelecionados.includes(descricao)}
-                            onChange={handleFiltroChange}
+                            checked={filtrosAplicacaoSelecionados.includes(descricao)}
+                            onChange={handleFiltroAplicacaoChange}
                             />
                             {descricao}
                         </label>
                         ))}
                     </div>
+                    <hr />
+            </div>
+        
+                
                 
                 <div className="TabelaContainer">
                 <table className="Tabela-busca">
-                <thead style={{ backgroundColor: '#003366', color: 'white' }}>
+                <thead >
                     <tr>
                     <th>Nome</th>
                     <th>Familia</th>
@@ -112,14 +160,16 @@ const Formulas = []
                     </tr>
                 </thead>
                 <tbody>
-                    {formulasFiltradas.map(formula => (
+                {formulasFiltradas
+                .sort((a, b) => a.sistema_titulo.localeCompare(b.sistema_titulo))
+                .map(formula => (
                     <tr key={formula.id}>
-                        <td>{formula.sistema_titulo}</td>
-                        <td>{formula.familia_titulo}</td>
-                        <td>{formula.aplicacao_titulo}</td>
-                        <td>{formula.descricao}</td>
+                    <td>{formula.sistema_titulo}</td>
+                    <td>{formula.familia_titulo}</td>
+                    <td>{formula.aplicacao_titulo}</td>
+                    <td>{formula.descricao}</td>
                     </tr>
-                    ))}
+                ))}
                 </tbody>
                 </table>
             </div>
