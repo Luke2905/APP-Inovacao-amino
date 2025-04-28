@@ -349,6 +349,7 @@ justify-items: center;
   background-color: #f8f8f8;
   border: rgba(128, 128, 128, 0.806) solid 1.5px;
   box-shadow: 0 2px 2px rgba(18, 0, 105, 0.363);
+  color: #070707;
 }
 
 .Tabela{
@@ -395,4 +396,68 @@ tr:hover {
 	background-color: #cbcbcba5;
 	cursor: pointer;
 	transition: 0.5s;
+}
+
+/*----------------------- Busca Avançada ---------------------*/
+.BuscaConteudo {
+  width: 92vw;
+}
+
+.buscaContainer {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr ;
+  grid-template-rows: auto;
+}
+
+.select-propriedades {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 300px;
+  min-width: 300px;
+  height: 200px;
+  overflow-y: auto;
+  width: 20vw;
+}
+
+.TabelaContainer {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: 70vh;
+  overflow-y: auto; /* Apenas o container faz o scroll */
+  background-color: white;
+  margin: 10px;
+}
+
+.Tabela-busca {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.Tabela-busca thead {
+  position: sticky;
+  top: 0;
+  background-color: #003366;
+  color: white;
+  z-index: 2;
+}
+
+.Tabela-busca th, .Tabela-busca td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.Tabela-busca th {
+  text-align: center;
+  background-color: #003366;
+  color: white;
+}
+
+tr:hover {
+  background-color: #cbcbcba5;
+  cursor: pointer;
+  transition: 0.5s;
 }
