@@ -336,7 +336,7 @@ footer {
 /* ******************** Bloco de Formulas *************************/
 .FormulasConteudo{
 width: 92vw;
-justify-items: center;
+align-items: center;
 }
 
 .searchBar {
@@ -351,7 +351,33 @@ justify-items: center;
   box-shadow: 0 2px 2px rgba(18, 0, 105, 0.363);
   color: #070707;
 }
+.CardContainer{
+  width: 92vw;
+  height: 74vh;
+  overflow-y: auto;
+}
 
+
+.CardFormula{
+  margin: 0 10px 10px 0;
+  width: 90vw;
+  height: 12vh;
+  background-color: #95b1d60f;
+  box-shadow: 0 2px 2px rgba(18, 0, 105, 0.249);
+  border-radius: 15px;
+}
+
+.CardFormula h3, p{
+  margin: 5px 25px;
+}
+.CardFormula i{
+  color: #003366;
+  font-size: 20px;
+  position: relative;
+  left: 92%;
+  bottom:  50%;
+  margin: 10px;
+}
 .Tabela{
   border-collapse: collapse;
   margin: 10px; 
@@ -419,6 +445,7 @@ tr:hover {
   width: 20vw;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.227);
   border-radius: 10px;
+  overflow-y: auto;
 }
 .select-aplicacao {
   max-width: 300px;
