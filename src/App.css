@@ -415,7 +415,22 @@ tr:hover {
   grid-row: 1;
   max-width: 300px;
   min-width: 300px;
-  height: 200px;
+  height: 73vh;
+  width: 20vw;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.227);
+  border-radius: 10px;
+}
+.select-aplicacao {
+  max-width: 300px;
+  min-width: 300px;
+  height: 150px;
+  overflow-y: auto;
+  width: 20vw;
+}
+.select-familias {
+  max-width: 300px;
+  min-width: 300px;
+  height: 150px;
   overflow-y: auto;
   width: 20vw;
 }
@@ -431,7 +446,7 @@ tr:hover {
 }
 
 .Tabela-busca {
-  width: 100%;
+  width: 65vw;
   border-collapse: collapse;
   margin: 0;
 }
@@ -439,8 +454,9 @@ tr:hover {
 .Tabela-busca thead {
   position: sticky;
   top: 0;
-  background-color: #003366;
-  color: white;
+  background-color: rgb(231, 244, 255);
+  color: rgb(0, 0, 99);
+  border-radius: 10px;
   z-index: 2;
 }
 
@@ -448,12 +464,11 @@ tr:hover {
   padding: 8px 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  width: 10vh;
 }
 
 .Tabela-busca th {
   text-align: center;
-  background-color: #003366;
-  color: white;
 }
 
 tr:hover {
@@ -461,3 +476,4 @@ tr:hover {
   cursor: pointer;
   transition: 0.5s;
 }
+
