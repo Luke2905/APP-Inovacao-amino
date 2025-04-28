@@ -57,7 +57,22 @@ const Formulas = []
           />
     
 
-            <table className="Tabela">
+            <div className="CardContainer">
+            {formulasFiltradas
+            .sort((a, b) => a.titulo.localeCompare(b.titulo))
+            .map(formula => (
+              <div key={formula.id} className="CardFormula">
+                <h3>{formula.titulo}</h3>
+                <p>{formula.descricao}</p>
+                <i className="fa-solid fa-pencil"></i>
+                <i className="fa-solid fa-trash"></i>
+              </div>
+            ))}            
+            </div>
+
+
+
+            {/* <table className="Tabela">
               <thead style={{ backgroundColor: '#003366', color: 'white' }}>
                 <tr>
                   <th>Codigo</th>
@@ -75,7 +90,7 @@ const Formulas = []
                 ))}
               </tbody>
             </table>
-      
+       */}
       </div>
     );
   }
