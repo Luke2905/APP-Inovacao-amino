@@ -1,0 +1,94 @@
+/* ----------------------- CSS Formulário de Entrada -------------------------*/
+.FormEntrada{
+    position: absolute;
+    width: 50vw;
+    height: 90vh;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    transform: translate(-133%, -12%);
+    z-index: 100;
+  
+  }
+  form{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px;
+    
+  }
+  .FormEntrada h2{
+    text-align: center;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .close:hover {
+	
+	color: rgba(0, 0, 0, 0.647);
+	cursor: pointer;
+	transition: 0.5s;
+}
+  form input{ 
+    margin: 10px;
+    border: solid 2px rgb(94, 94, 94);
+    border-radius: 10px;
+    height: 30px;
+  }
+  #transportadora_input{
+    width: 47vw;
+  }
+  #motorista{
+    width: 47vw;
+  }
+  #rg{
+    width: 47vw;
+  }
+  #ajudante{
+    width: 47vw;
+  }
+  #rg-ajudante{
+    width: 47vw;
+  }
+  #placa{
+    width: 10vw;
+  }
+  #enviar{
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #003366;
+    color: #ffffff;
+   transform: translate(100%, 50%);
+  }
+  #select{
+  
+      width: 15vw;
+      height: 30px;
+      border-radius: 10px;
+      margin: 10px;
+  
+  }
+  h1{
+    text-align: center;
+  }
+#cadButton{
+    float: right;
+    margin: 10px;
+}
+#cadButton i{
+    font-size: 40px;
+    color: #003366;
+}
+
+#verForm{
+    color: #003366;
+    font-size: 20px;
+    position: relative;
+    left: -3%;
+
+}
