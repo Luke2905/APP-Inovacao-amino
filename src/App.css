@@ -535,3 +535,11 @@ tr:hover {
   font-weight: bold;
   font-size: 25px;
 }
+
+.VerFormulas input{
+  background-color: #e0e9f78c;
+  width: 48vw;
+  height: 5vh;
+  border-radius: 10px;
+  color: #000000;
+}
