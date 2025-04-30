@@ -88,7 +88,7 @@
   padding: 20px;
   border-bottom: 1px solid #ffffff;
   cursor: pointer;
-  text-align: center;
+
   transition: max-height .3s ease-out;
   
 }
@@ -374,7 +374,7 @@ align-items: center;
   color: #003366;
   font-size: 20px;
   position: relative;
-  left: 92%;
+  left: 90%;
   bottom:  50%;
   margin: 10px;
 }
@@ -485,6 +485,7 @@ tr:hover {
   color: rgb(0, 0, 99);
   border-radius: 10px;
   z-index: 2;
+  font-size: 18px;
 }
 
 .Tabela-busca th, .Tabela-busca td {
@@ -494,6 +495,9 @@ tr:hover {
   width: 10vh;
 }
 
+.Tabela-busca tbody{
+  font-size: 14px;
+}
 .Tabela-busca th {
   text-align: center;
 }
@@ -503,4 +507,31 @@ tr:hover {
   cursor: pointer;
   transition: 0.5s;
 }
+/* ********************* Modal Formulas ************************ */
+.VerFormulas{
+  position: absolute;
+  width: 50vw;
+  height: 70vh;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  transform: translate(40%, -110%);
+  z-index: 100;
+}
 
+
+.VerFormulas div{
+  margin: 10px;
+}
+
+.VerFormulas h2{
+  text-align: center;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
