@@ -511,13 +511,14 @@ tr:hover {
 .VerFormulas{
   position: absolute;
   width: 50vw;
-  height: 70vh;
+  height: 72vh;
   background-color: #ffffff;
   border: solid 1px #000000;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   transform: translate(40%, -110%);
   z-index: 100;
+  overflow-y: auto;
 }
 
 
@@ -537,9 +538,36 @@ tr:hover {
 }
 
 .VerFormulas input{
-  background-color: #e0e9f78c;
+  background-color: #cfe0ff8c;
   width: 48vw;
-  height: 5vh;
-  border-radius: 10px;
+  height: 6vh;
+  border: #858585;
+  border-radius: 5px;
   color: #000000;
+}
+#salvar{
+  transform: translate(20vw, 50%);
+  margin: 10px;
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.Tabela-componete{
+    width: 48vw;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.Tabela-componete thead {
+  position: sticky;
+  top: 0;
+  background-color: rgb(240, 244, 246);
+  color: rgb(0, 0, 99);
+  border-radius: 10px;
+  z-index: 2;
+  font-size: 18px;
+}
+
+.Tabela-componete tr {
+  height: 5vh;
 }
