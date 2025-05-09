@@ -115,36 +115,39 @@ const Formulas = []
             />
         <div className="buscaContainer">
             <div className="select-propriedades">
+            <strong style={{textAlign: 'center'}}>Filtrar por Familia:</strong>
             <div className="select-familias">
-                    <strong style={{textAlign: 'center'}}>Filtrar por Familia:</strong>
                     {Array.from(new Set(familia.map((p) => p.titulo))).map((descricao) => (
-                        <label key={descricao} style={{ display: "block" }}>
+                         <label key={descricao} className="checkbox-container" style={{ display: "block" }}>
                             <input
                             type="checkbox"
                             value={descricao}
                             checked={filtrosFamiliaSelecionados.includes(descricao)}
                             onChange={handleFiltroFamiliaChange}
                             />
+                             <span className="checkmark"></span>
                             {descricao}
                         </label>
                         ))}
                     </div>
                     <hr />
-            <div className="select-aplicacao">
                     <strong>Filtrar por Aplicação:</strong>
+            <div className="select-aplicacao">
                     {Array.from(new Set(aplicacao.map((p) => p.titulo))).map((descricao) => (
-                        <label key={descricao} style={{ display: "block" }}>
+                        <label key={descricao} className="checkbox-container" style={{ display: "block" }}>
                             <input
                             type="checkbox"
                             value={descricao}
                             checked={filtrosAplicacaoSelecionados.includes(descricao)}
                             onChange={handleFiltroAplicacaoChange}
                             />
+                            <span className="checkmark"></span>
                             {descricao}
                         </label>
                         ))}
                     </div>
                     <hr />
+                    
             </div>
         
                 
