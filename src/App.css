@@ -340,7 +340,7 @@ align-items: center;
 }
 
 .searchBar {
-  min-width: 90%;
+  min-width: 80%;
   margin-left: 5%;
   margin: 10px;
   padding: 10px;
@@ -364,7 +364,7 @@ align-items: center;
   height: 12vh;
   background-color: #95b1d60f;
   box-shadow: 0 2px 2px rgba(18, 0, 105, 0.249);
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .CardFormula h3, p{
@@ -539,7 +539,7 @@ tr:hover {
 
 .VerFormulas input{
   background-color: #cfe0ff8c;
-  width: 48vw;
+  width: 47vw;
   height: 6vh;
   border: #858585;
   border-radius: 5px;
@@ -617,8 +617,62 @@ tr:hover {
   left: 7px;
   top: 3px;
   width: 6px;
-  height: 12px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
+  height: 10px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 2.5px 2.5px 0;
   transform: rotate(45deg);
+}
+
+/* ************************* X ****************************** */
+/* *********************** PROPRIEDADES *********************** */
+.VerPropriedades{
+  position: absolute;
+  width: 50vw;
+  height: 72vh;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  transform: translate(40%, 0%);
+  z-index: 100;
+  overflow-y: auto;
+}
+.VerPropriedades h2, h4{
+  text-align: center;
+}
+.limpaFiltro{
+    background-color: #ffffff; 
+    color: rgb(255, 111, 0);
+    border: solid 1px rgb(255, 111, 0);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 12vw;
+    font-weight: bold;
+    position: relative;
+    left: 3%;
+    bottom: 18.5%
+}
+
+.limpaFiltro:hover{
+    background-color: rgba(255, 111, 0, 0.359);
+    color: white;
+    transition: ease-in 0.2s;
+}
+.detalhesProp{
+  margin: 10px;
+  
+}
+.CardPropriedade {
+  background-color: #b9cae2;
+  width: 90%;
+  border-radius: 5px;
+  transform: translateX(6%);
+  transition: all 0.3s ease-in-out;
+}
+
+.CardPropriedade:hover {
+  transform: scale(1.05) translateX(6%);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
