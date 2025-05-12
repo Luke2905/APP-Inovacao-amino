@@ -240,9 +240,9 @@ const Formulas = []
               {formulaSelecionada.propriedades.map((comp, index) => (
                    
                 <div className="CardPropriedade" key={index}>  
-                    <p>{comp.propriedade}</p>
-                    <p>Valor Min: {comp.valorVariacaoInferior} ↑</p>   
-                    <p>Valor Max: {comp.valorVariacaoSuperior} ↓</p>
+                    <p className="prop">{comp.propriedade}</p>
+                    <p  className="v1" style={{fontWeight: 'bold', color: 'red'}}>Valor Min: {comp.valorVariacaoInferior} ↑</p>   
+                    <p className="v2" style={{fontWeight: 'bold', color: 'green'}}>Valor Max: {comp.valorVariacaoSuperior} ↓</p>
              </div>
                 ))}
                 </>   
