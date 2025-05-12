@@ -666,7 +666,7 @@ tr:hover {
 }
 .CardPropriedade {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas iguais */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colunas iguais */
   grid-template-rows: auto;
   background-color: #e9f2ffa7;
   width: 90%;
@@ -684,13 +684,13 @@ tr:hover {
 
 .prop {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 1/ span 2;
 }
 .v1 {
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 3;
 }
 .v2 {
   grid-row: 1;
-  grid-column: 3;
+  grid-column: 4;
 }
