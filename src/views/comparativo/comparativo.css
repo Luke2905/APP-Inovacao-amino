@@ -1,0 +1,83 @@
+.BodyComparador{
+    min-width: 90vw;
+    align-items: center;
+}
+.comparador-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr ;
+  grid-template-rows: auto;
+}
+
+.adicionar-formula {
+  margin-bottom: 20px;
+}
+
+.adicionar-formula input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.select-formulas{
+      grid-column: 1;
+        grid-row: 1;
+        max-width: 300px;
+        min-width: 300px;
+        height: 65vh;
+        width: 20vw;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.227);
+        border-radius: 10px;
+        overflow-y: auto;
+}
+
+.tabela-comparativa {
+  grid-column: 2 ;
+  grid-row: 1;
+  overflow-x: auto; /* Apenas o container faz o scroll */
+}
+.Comparativos{
+  width: 100%;
+  height: 60vh;
+  background-color: white;
+  margin: 10px;
+}
+
+.Comparativos th,
+.Comparativos td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  min-width: 12vw;
+}
+
+.progress-container {
+  position: relative;
+  height: 25px;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  background-color: #05377c !important;
+  border-radius: 6px;
+}
+
+.range-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 25px;
+  color: #000;
+}
+
+.limpaFiltro{
+    position: absolute;
+    left: 85%;
+    bottom: 80%;
+}
+h2{
+   text-align: center;
+}
