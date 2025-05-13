@@ -3,6 +3,7 @@ import './App.css';
 import Home from './views/home.tsx'
 import Formulas from './views/formulas.tsx';
 import BuscaPropriedades from './views/buscaAvancada.tsx';
+import Comparativo from './views/comparativo/comparativo.tsx';
 //import MenuNav from './components/navBar.tsx';
 import ReactDOM from "react-dom/client";
 import MenuLateral from './components/sideMenu.tsx';
@@ -24,12 +25,13 @@ export default function App() {
             <Route path='home' element={<Home />} />
             <Route path='formulas' element={<Formulas />} />
             <Route path='busca' element={<BuscaPropriedades />} />
+            <Route path='comparativo' element={<Comparativo />} />
           </Routes>
         </main>
       </Router>
       <footer>
         <p>
-          Desenvolvido por Lucas Laranjeira - © 2025 Todos os Direitos Reservados -
+          Desenvolvido por TI AMINO - © 2025 Todos os Direitos Reservados -
           <a href='https://www.amino.com.br/'> Amino</a>
         </p>
       </footer>
