@@ -42,6 +42,12 @@ const MenuLateral = () => {
                 {expandido && <span>Busca Avançada</span>}
             </Link>
          </li>
+         <li>
+             <Link to="/comparativo">
+                <i className={`fa ${expandido ? 'fa-square-poll-vertical' : 'fa-square-poll-vertical'}`}></i>
+                {expandido && <span>Comparativo</span>}
+            </Link>
+         </li>
 
         </ul>
       </div>
