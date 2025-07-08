@@ -1,0 +1,28 @@
+.acesso-negado-container {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.acesso-negado-container h1 {
+  font-size: 48px;
+  color: #e63946;
+}
+
+.acesso-negado-container p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn-voltar {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  background-color: #1d3557;
+}
