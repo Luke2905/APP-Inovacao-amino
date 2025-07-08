@@ -1,60 +1,42 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import '../App.css';
 import App from '../App.tsx'
+import MenuAdmin from './SIdeMenuItens.tsx/menuAdmim.tsx';
+import MenuVendedor from './SIdeMenuItens.tsx/menuVendedor.tsx';
 import { Outlet, Link } from "react-router-dom";
+import MenuLaboratorio from './SIdeMenuItens.tsx/menuLaboratorio.tsx';
 
 const MenuLateral = () => {
   const [expandido, setExpandido] = useState(false); // -> estado de expansão do meno
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setExpandido(!expandido);
   };
 
-  return (
-    <>
-    <div className={`menu-lateral ${expandido ? 'expandido' : ''}`}>
-    <button className={`toggle-btn fa ${expandido ? 'fa-minus' : 'fa-bars'}`} onClick={toggleMenu}>
-    </button>
-      <h4>AMINO</h4>
-      <div className="itens-menu">
-        <ul>
-        <li>
-             <Link to="/home">
-                <i className={`fa ${expandido ? 'fa-home' : 'fa-home'}`}></i>
-                {expandido && <span>Home</span>}
-            </Link>
-         </li>
-         <li>
-             <Link to="/aplicacao">
-                <i className={`fa ${expandido ? 'fa-wand-magic-sparkles' : 'fa-wand-magic-sparkles'}`}></i>
-                {expandido && <span>Aplicações</span>}
-            </Link>
-         </li>
-         <li>
-             <Link to="/formulas">
-                <i className={`fa ${expandido ? 'fa-flask' : 'fa-flask'}`}></i>
-                {expandido && <span>Formulas</span>}
-            </Link>
-         </li>
-         <li>
-             <Link to="/busca">
-                <i className={`fa ${expandido ? 'fa-magnifying-glass' : 'fa-magnifying-glass'}`}></i>
-                {expandido && <span>Busca Avançada</span>}
-            </Link>
-         </li>
-         <li>
-             <Link to="/comparativo">
-                <i className={`fa ${expandido ? 'fa-square-poll-vertical' : 'fa-square-poll-vertical'}`}></i>
-                {expandido && <span>Comparativo</span>}
-            </Link>
-         </li>
+  const handleLogout = () => {
+  localStorage.removeItem('token');
+  navigate('/login');
+  };
 
-        </ul>
-      </div>
-    </div>
-    <Outlet/>
-    </>
-  );
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+   
+   if (usuario.perfil == "Vendedor"){
+    return (
+      <MenuVendedor/>
+    );
+   }
+   if (usuario.perfil == "Laboratório"){
+    return (
+      <MenuLaboratorio/>
+    )
+   }
+   if (usuario.perfil == "ADMIN"){
+    return (
+      <MenuAdmin/>
+    )
+   }
 };
 
 export default MenuLateral;
