@@ -4,10 +4,12 @@ import '../App.css'
 import {motion} from 'framer-motion'; //-> biblioteca para animações
 
 const Home =() =>{
-        return(
-            <div className="HomeConteudo">
+  const usuario = JSON.parse(localStorage.getItem('usuario')); // ← Recupera os dados do Usuario
 
-
+  return(
+        <>
+        <p style={{fontSize: '2rem', fontWeight: 'bold'}}>Seja Bem vindo (a), {usuario.nome}</p> {/* % Exibe o nome do User logado */}
+        <div className="HomeConteudo">
           {/* Item 1 - Produtos */}
           <div className="item-1">
             <h1 id="noticia-titulo">Novas Formulações!!!</h1>
@@ -72,12 +74,8 @@ const Home =() =>{
               </div>
             </div>
           </div>
-
-  
-
-    
-            
-            </div>
+        </div>
+        </>
         )
  
 }
