@@ -61,7 +61,7 @@ const Formulas = []
 
      async function getAplicacao() {
         try {
-            const aplicacaoApi = await api.get('/Listar')
+            const aplicacaoApi = await api.get('/aplicacao')
             setApicacao(aplicacaoApi.data)   //-> seleciona apenas o campo data da requisiçao do backend
             console.log("Sucesso na busca")
             }catch(error){
@@ -199,7 +199,7 @@ const Formulas = []
                 </tbody>
                 </table>
             </div>
-
+      {/*---------------------- MODAL DE VISUALIZAÇÃO DE PROPRIEDADES ------------------  */}
                 {mostrarModal && formulaSelecionada &&(
                   <div className="VerPropriedades" >
                     <motion.div
@@ -219,7 +219,7 @@ const Formulas = []
                       <input type="text" value={formulaSelecionada.nome} disabled />
                       <hr />
                       <label>Descricão: </label><br />
-                      <input type="text" value={formulaSelecionada.descricao} disabled />
+                      <input style={{width: '35vw'}} type="text" value={formulaSelecionada.descricao} disabled />
                       <hr />
                       <label>Familia: </label>
                       <input type="text" value={formulaSelecionada.familia} disabled />
