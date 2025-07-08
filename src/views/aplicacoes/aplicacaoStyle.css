@@ -1,0 +1,34 @@
+.AplicacaoConteudo{
+width: 92vw;
+align-items: center;
+}
+
+.CardContainer{
+  width: 92vw;
+  height: 74vh;
+  overflow-y: auto;
+}
+.Card-Aplicacao{
+  margin: 0 10px 10px 0;
+  width: 90vw;
+  height: 8vh;
+  background-color: #95b1d60f;
+  box-shadow: 0 2px 2px rgba(18, 0, 105, 0.249);
+  border-radius: 5px;
+  font-size: larger;
+  font-weight: bold;
+  color: #0b005b;
+}
+p{
+    justify-content: center;
+    align-items: center;
+}
+
+.Card-Aplicacao i{
+  color: #003366;
+  font-size: 20px;
+  position: relative;
+  left: 95%;
+  bottom:  50%;
+  margin: 10px;
+}
